@@ -17,6 +17,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('category', \App\Http\Controllers\CategoriesController::class);
     Route::resource('role', \App\Http\Controllers\RoleController::class);
     Route::resource('product', \App\Http\Controllers\ProductController::class);
+    Route::resource('profile', \App\Http\Controllers\ProfileController::class);
+    Route::post('change-password', [\App\Http\Controllers\ProfileController::class, 'changePassword'])
+        ->name('profile.change-password');
 });
 
 
