@@ -26,6 +26,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('get-products', [\App\Http\Controllers\OrderController::class, 'getProducts'])
         ->name('get-products');
+
+    Route::post('cashless', [\App\Http\Controllers\OrderController::class, 'paymentCashless'])
+        ->name('cashless');
 });
 
 
